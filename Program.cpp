@@ -1,10 +1,13 @@
 #include <iostream>
+#include <string>
 #include "Tokenizer.h"
-
 int main()
 {
-    char test[] = "Test1;1.2;123A;?ADS.@2`;";
-    Tokenizer token(test);
+    
+    string text;
+    cout << "Enter input: ";
+    getline(cin, text);
+    Tokenizer token(text);
     cout << "Phase 1 Output:\n";
     for (Token tok : token.tokens) {
         cout << "Token: \"" << ((tok.getWord()=="\n") ? "\\n" : tok.getWord()) << "\" - Type: ";
